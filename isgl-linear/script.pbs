@@ -1,0 +1,13 @@
+#PBS -N s_linear
+#PBS -o /home/jlaria/simulations/isgl/mC1.o
+#PBS -e /home/jlaria/simulations/isgl/mC1.e
+#PBS -m abe -M jlaria@est-econ.uc3m.es
+#PBS -l nodes=64,walltime=96:00:00
+
+cd /home/jlaria/simulations/isgl/
+
+pbsdsh uname -n
+. /opt/torque/etc/openmpi-setup.sh
+date
+mpirun ~/miniconda2/bin/R --slave -f simulate.R
+date

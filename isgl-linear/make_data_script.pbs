@@ -1,0 +1,9 @@
+#PBS -N make_data
+#PBS -o /home/jlaria/simulations/isgl/mC.o
+#PBS -e /home/jlaria/simulations/isgl/mC.e
+#PBS -m abe -M jlaria@est-econ.uc3m.es
+#PBS -l nodes=1,walltime=1:00:00
+
+cd /home/jlaria/simulations/isgl/
+
+sh make_data.sh
