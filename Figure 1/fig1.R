@@ -4,6 +4,7 @@ if(!file.exists("../data/colitis.RData")){
 
 load("../data/colitis.RData")
 
+set.seed(0)
 
 train_idx <- sample(1:nrow(X),50)
 X_train <- X[train_idx,]
@@ -39,4 +40,5 @@ ggplot(results, aes(x=lambda1, y=err )) +
   scale_x_continuous(expression(lambda[1]))+
   labs(linetype=expression(lambda[2]))+
   labs(color=expression(lambda[2]))+
+  scale_linetype_manual(values=c("solid", "dotted", "dashed", "dotdash"))+
   scale_color_brewer(palette="Set1")+theme_bw()
